@@ -19,8 +19,4 @@ public class DemoSender {
 		this.template.convertAndSend(queue.getName(), message);
 		System.out.println("Sent message: " + message );
 	}
-	
-	public boolean isRunning(){
-		return isRunning;
-	}
 }
