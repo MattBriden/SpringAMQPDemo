@@ -1,0 +1,3 @@
+To compile project: mvn clean install
+
+Run jar: java -jar target/SpringAMQPDemo.jar --spring.profiles.active=demo-queue,{sender|receiver}

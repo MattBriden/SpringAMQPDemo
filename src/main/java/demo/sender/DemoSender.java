@@ -1,5 +1,7 @@
 package demo.sender;
 
+import java.util.Date;
+
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +17,8 @@ public class DemoSender {
 	
 	@Scheduled(fixedDelay = 1000, initialDelay = 500)
 	public void send(){
-		String message = "This is a demo message";
-		this.template.convertAndSend(queue.getName(), message);
-		System.out.println("Sent message: " + message );
+		Date now = new Date();
+		this.template.convertAndSend(queue.getName(), now);
+		System.out.println("Sent message: " + now.toString() );
 	}
 }
